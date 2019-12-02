@@ -1,0 +1,36 @@
+<odoo>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="action_customer_services">
+        <field name="name">Customer Services</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rental.customerservice</field>
+        <field name="context"></field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+          No Customer Services
+            </p>
+        </field>
+    </record>
+    <!-- end actions opening views on models -->
+
+    <!-- tree view of the model -->
+    <record id="rental_customerservice_tree" model="ir.ui.view">
+        <field name="name">rental.customerservice.tree</field>
+        <field name="model">rental.customerservice</field>
+        <field name="arch" type="xml">
+            <tree string="Customer Services">
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="start_date"/>
+                <field name="expried_date"/>
+            </tree>
+        </field>
+    </record>
+    <!-- end tree view of the model -->
+
+   
+
+</odoo>

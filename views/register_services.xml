@@ -1,0 +1,55 @@
+<odoo>
+
+  <!-- inherit product -->
+  <record id='product_inherit' model='ir.ui.view'>
+    <field name='name'>product.template.inherit</field>
+    <field name='model'>product.template</field>
+    <!-- get from ui, edit view sale order -->
+    <field name='inherit_id' ref='product.product_template_only_form_view'/>
+    <field name="arch" type="xml">
+      <!-- add check box -->
+      <div name="options" position="inside">
+        <div attrs="{'invisible': [('type','!=','service')]}">
+          <field name="rental_ok"/>
+          <label for="rental_ok"/>
+        </div>
+      </div>
+      <!-- end add check box -->
+    </field>
+  </record>
+  <!-- end inherit product -->
+
+  <!-- actions opening views on models -->
+
+  <record model="ir.actions.act_window" id="action_register_serices">
+    <field name="name">Register Services</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">rental.registerservice</field>
+    <field name="context"></field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+          No Register Services
+      </p>
+    </field>
+  </record>
+  <!-- end actions opening views on models -->
+
+  <!-- tree view of the model -->
+  <record id="rental_registerservice_tree" model="ir.ui.view">
+    <field name="name">rental.registerservice.tree</field>
+    <field name="model">rental.registerservice</field>
+    <field name="arch" type="xml">
+      <tree string="Register Services">
+        <field name="partner_id"/>
+        <field name="product_id"/>
+        <field name="invoice_id"/>
+        <field name="register_date"/>
+        <field name="months" avg="Avg of age"/>
+      </tree>
+    </field>
+  </record>
+  <!-- end tree view of the model -->
+
+ 
+</odoo>

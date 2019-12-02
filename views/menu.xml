@@ -1,0 +1,7 @@
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="Services" id="rental_menu_root" web_icon="ebk_rental,static/description/icon.png"/>
+    <!-- end Top menu item -->
+    <menuitem name="Customer Services" id="rental_menu_customer_services" parent="rental_menu_root" action="action_customer_services"/>
+    <menuitem name="Register Services" id="rental_menu_register_serices" parent="rental_menu_root" action="action_register_serices"/>
+</odoo>
